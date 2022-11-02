@@ -1,14 +1,13 @@
 module rom #(
     parameter ADDRESS_WIDTH = 8,
-    DATA_WIDTH = 8,
-)
-(
+    DATA_WIDTH = 8
+)(
     input logic clk,
-    input logic [ADDRESS_WIDTH - 1:0] addr,
+    input logic [ADDRESS_WIDTH-1:0] addr,
     output logic [DATA_WIDTH-1:0] dout
 );
 
-logic [DATA_WIDTH-1:0] rom_array [2**ADDRESS_WIDTH:0];
+logic [DATA_WIDTH-1:0] rom_array [2**ADDRESS_WIDTH-1:0];
 
 initial begin
     $display("Loading rom.");
@@ -18,5 +17,5 @@ end;
 always_ff @(posedge clk)
     //output is synchronous
     dout <= rom_array[addr];
-
+    
 endmodule
