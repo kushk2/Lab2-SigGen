@@ -1,6 +1,6 @@
 module ram2port#(
     parameter ADDRESS_WIDTH = 9,
-    DATA_WIDTH = 8
+    DATA_WIDTH = 8`
 )(
     input logic clk,
     input logic wr_en,
